@@ -1,0 +1,90 @@
+.custom-select-container {
+  position: relative;
+}
+
+.custom-select-list-container {
+  padding-left: 10px;
+
+  &:hover {
+    background-color: rgba(77, 77, 77, 0.5);
+
+    span {
+      color: #FFF;
+    }
+  }
+}
+
+.close-button {
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+
+
+}
+
+
+.custom-select-button {
+  width: 131px;
+  height: 38px;
+  appearance: none;
+  outline: 0;
+  padding: 0 4em 0 1em;
+  cursor: pointer;
+  background: #fff;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -1.5px 0 0 rgba(255, 255, 255, 0.25) inset;
+}
+
+.custom-select-list-container {
+  display: flex;
+  align-items: center;
+}
+
+.custom-select-options {
+  height: 300px;
+  overflow-y: scroll;
+  position: absolute;
+  top: 100%;
+  padding: 30px 0;
+  left: 0;
+  width: 372px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.3) 100%);
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 15px;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.17);
+  list-style-type: none;
+  margin: 5px 0 0;
+  z-index: 100;
+}
+
+.country-name {
+  display: flex;
+  flex: 1;
+}
+
+.custom-select-options span {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(77, 77, 77, 1);
+  line-height: 25px;
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.custom-select-options li:hover {
+  background-color: #f0f0f0;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .custom-select-options {
+    width: 315px;
+  }
+}

@@ -1,0 +1,224 @@
+.login-container {
+  display: flex;
+  position: relative;
+
+  .left-side-container {
+    width: 70%;
+
+    .left-side {
+      background-color: rgba(0, 0, 0, 0.7);
+
+      .content-container {
+        padding-top: 100px;
+        padding-left: 170px;
+
+        .logo-container {
+          color: #fff;
+          font-size: 30px;
+          display: flex;
+          align-items: center;
+        }
+
+        .text-container {
+          font-size: 16px;
+          color: #fff;
+          max-width: 150px;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  .right-side {
+    padding: 0 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .sign-in-container {
+      max-width: 100%;
+
+      .logIn {
+        margin-bottom: 50px;
+      }
+
+      .button_container {
+        width: 390px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        .btn-login {
+          cursor: pointer;
+          width: 200px;
+          height: 40px;
+          border-radius: 30px;
+          background-color: rgba(248, 116, 36, 1);
+          color: #fff;
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 18px;
+          box-shadow: 0px 15px 10px -10px rgba(252, 123, 19, 0.4);
+          margin-top: 40px;
+          margin-left: auto;
+
+          &:hover {
+            background-color: rgb(235 91 3);
+          }
+        }
+      }
+
+      .mobile_number_fields_container {
+        display: flex;
+      }
+
+      .selected_code {
+        margin-right: 5px;
+      }
+
+      .credentials {
+        input {
+          width: 250px;
+          height: 38px;
+          border-top-right-radius: 10px;
+          border-bottom-right-radius: 10px;
+          border: 1px solid rgba(0, 0, 0, 0.2);
+          box-shadow: 0 -1.5px 0 0 rgba(255, 255, 255, 0.25) inset;
+          outline: none;
+          padding-left: 10px;
+        }
+      }
+
+      .eye-icon {
+        display: none;
+      }
+
+      .password-container {
+        position: relative;
+
+        .eye-icon {
+          position: absolute;
+          top: 50%;
+          right: 15px;
+          transform: translateY(-50%);
+        }
+
+        input:focus + .eye-icon {
+          display: block;
+        }
+      }
+
+      .password-container.credentials {
+
+        .password {
+          width: 100%;
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
+        }
+      }
+       .input_text_container,.phone{
+         position: relative;
+       }
+
+      .input_text_container {
+        margin-top: 50px;
+
+        p {
+          text-align: left;
+        }
+      }
+
+    }
+  }
+
+  .right-side, .left-side {
+    height: 100vh;
+  }
+}
+
+.icon_container {
+  position: relative;
+
+  &::after {
+    content: "\f107";
+    font-family: FontAwesome;
+    font-size: 15px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 6px;
+    right: 6px;
+    justify-content: center;
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    pointer-events: none;
+    border: 1px solid #D2D2D2;
+    color: #5E5E5E;
+    background-color: #E6E6E6;
+  }
+}
+
+
+@media screen and (max-width: 1200px) {
+  .login-container {
+
+    .left-side-container {
+
+      .left-side {
+
+        .content-container {
+          padding: 30px;
+
+          .text-container {
+            max-width: 200px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .login-container {
+    display: block;
+
+    .lang-container {
+      color: #fff;
+    }
+
+    .left-side-container {
+      width: 100%;
+
+      .left-side {
+        height: 20vh;
+
+        .content-container {
+
+          .text-container {
+            max-width: 150px;
+          }
+        }
+      }
+    }
+
+    .right-side {
+      height: 80vh;
+      align-items: center;
+
+      .sign-in-container {
+        padding-left: 0;
+
+        .credentials {
+          input {
+            width: 250px;
+
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+

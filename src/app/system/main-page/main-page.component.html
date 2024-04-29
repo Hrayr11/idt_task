@@ -1,0 +1,50 @@
+<div class="main_page_container">
+  <div class="breadcrumb_container">
+    Breadcrumb1 &rarr; Breadcrumb2 &rarr; Breadcrumb3
+  </div>
+  <div class="header_text">
+    <h3> Title </h3>
+  </div>
+    <form class="d-flex input-group w-auto">
+        <div class=" search_input">
+          <input type="search" placeholder="Search"/>
+          <i class="fas fa-search icon-search"></i>
+        </div>
+    </form>
+  @for (account of bankAccount; track account; let i = $index) {
+    <div class="bank_account_container">
+      <div class="account_container">
+        <div class="img_container">
+          <img class="img" src="../assets/card.png"/>
+        </div>
+        <div class="account_type">
+          <div class="acc_header">Account Type</div>
+          <div class="acc_body">{{ account.accountType }}</div>
+        </div>
+        <div class="account_number">
+          <div class="acc_header">Account number</div>
+          <span class="acc_body adjust">
+  {{allowShowing[i] ? account.accountNumber : account.accountNumber.substring(0,2) + '****' + account.accountNumber.substring(6)}}
+  </span><i (click)="allowShowing[i] = !allowShowing[i]" class="fa fa-eye{{allowShowing[i] ? '':'-slash'}} eye_icon"></i>
+        </div>
+        <div class="currency">
+          <div class="acc_header">Currency</div>
+          <div class="acc_body">{{ account.currency }}</div>
+        </div>
+        <div class="balance">
+          <div class="acc_header">Balance</div>
+          <span class="acc_body balance_adjust adjust">
+  {{allowBalance[i] ? account.balance :  '**********'}}</span>
+  <i  (click)="allowBalance[i] = !allowBalance[i]" class="fa fa-eye{{allowBalance[i] ? '':'-slash'}} eye_icon"></i>
+        </div>
+      </div>
+    </div>
+  }
+
+  <div class="additional_info_container">
+    <div class="additional_info_header">
+      <div class="additional_info_text">additional info</div>
+    </div>
+    <div class="additional_info_content"><p>{{ this.additionalData }}</p></div>
+  </div>
+</div>

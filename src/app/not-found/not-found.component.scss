@@ -1,0 +1,41 @@
+.img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.not_found_text {
+  font-size: 25px;
+  text-shadow: 0 1px #ff8d8d, -1px 0 #ffc0c0, -1px 2px #ff8d8d, -2px 1px #ffc0c0,
+  -2px 3px #ff8d8d, -3px 2px #ffc0c0, -3px 4px #ff8d8d, -4px 3px #ffc0c0;
+  text-align: center;
+  letter-spacing: .5px;
+  margin-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.button_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+  .home {
+    background-color: rgba(255, 71, 51, 1);
+    color: #fff;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: rgba(226, 47, 26, 1);
+    }
+  }
+}
+
+
+

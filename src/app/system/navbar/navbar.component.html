@@ -1,0 +1,59 @@
+<nav class="navbar " id="navbar">
+  <div class="navbar-block">
+    <div class="search-logo-block">
+      <!-- Logo -->
+      <div class="logo_container">
+        <img src="../../assets/IDB_logo.png" class="image"/> IDBusiness
+      </div>
+      <!-- Search bar -->
+        <form class="d-flex  w-auto">
+          <div class="container search_input input-group">
+            <input type="search" placeholder="Search" class="input_cont"/>
+            <i class="fas fa-search icon-search"></i>
+          </div>
+        </form>
+    </div>
+
+    <div class="navbar-right-side">
+
+      <div class="right_side_content_container">
+        <div class="user_info_block">
+          <div class="user_info">
+            <div class="user_name"></div>
+              <span class="">{{ currentUser?.firstName + ' ' + currentUser?.lastName }}</span>
+
+            <div class="id_number">
+                <span>{{ currentUser?.passportNumber }}</span>
+              <i class="fa fa-angle-down" (click)="toggleShowInfo()"></i>
+              @if (showPersonInfo) {
+                <app-person-info (valueChanged)="toggleShowInfo()"></app-person-info>
+              }
+            </div>
+
+          </div>
+          <div class="customer_logo_container">
+            <img src="../../assets/person.png" class="customer_logo"/>
+          </div>
+        </div>
+
+        <div class="icons_container">
+          <a>
+            <i class="far fa-bell notification"></i>
+          </a>
+          <a>
+            <i class="far fa-envelope notification"></i>
+          </a>
+          <a>
+            <i class="fa fa-cog"></i>
+          </a>
+          <div class="lang-container mx-2">
+            <app-lang></app-lang>
+          </div>
+          <a class="logout_container" (click)="logout()">
+            <i class="fas fa-sign-out-alt logout"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

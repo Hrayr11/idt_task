@@ -1,0 +1,68 @@
+<div class="login-container">
+  <div class="left-side-container">
+    <div class="left-side">
+      <div class="content-container">
+        <div class="logo-container"><img src="assets/IDB_logo.png" width="50" height="50" alt="Girl in a jacket"/>IDBank
+        </div>
+        <div class="text-container">Make all transactions without leaving home</div>
+      </div>
+    </div>
+  </div>
+  <div class="right_side_container">
+    <div class="lang-container">
+      <app-lang className="langStyle"></app-lang>
+    </div>
+    <div class="right-side">
+      <div class="sign-in-container">
+        <p class="logIn">LOG IN</p>
+        <form [formGroup]="createLoginForm" (submit)="onSubmit($event)">
+          <div class="mobile_number_container">
+
+            <div class="mobile_number_fields_container">
+              <div class="selected_code">
+                <p>Select code</p>
+                <div class="icon_container">
+                  <app-phone-number-select [options]="options"
+                                           (optionSelected)="handleOptionSelected($event)"></app-phone-number-select>
+                </div>
+              </div>
+              <div class="credentials phone">
+                <p>Enter mobile number</p>
+                <div class="form-group">
+                  <input type="text" name="phoneNumber" formControlName="phoneNumber">
+                  @if (createLoginForm.get('phoneNumber')?.touched) {
+                    @if (createLoginForm.get('phoneNumber')?.errors?.['required']) {
+                      <div class="error-msg">Phone number is required</div>
+                    }
+                    @if (createLoginForm.get('phoneNumber')?.errors?.['pattern']) {
+                      <div class="error-msg">Invalid phone number</div>
+                    }
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="button_container">
+            @if (showPassword) {
+              <div class="input_text_container">
+                <p>Enter password</p>
+                <div class="password-container credentials">
+                  <input #passInput type="password" name="password" formControlName="password" class="password"
+                         (focus)="focusInput()" (blur)="blurInput()">
+                  <i #eyeIcon class='fa fa-eye-slash eye-icon' (click)=togglePassword()></i>
+                </div>
+            @if (createLoginForm.get('password')?.touched) {
+            @if (createLoginForm.get('password')?.errors?.['required']) {
+            <div class="error-msg">Password is required</div>
+            }}
+              </div>
+            }
+            <button [disabled]="createLoginForm.get('phoneNumber')?.invalid" type="{{ !showPassword ? 'button' : 'submit' }}" class="btn btn-login"
+                    (click)="onSubmitMobileNumber()">{{ !showPassword ? 'Next' : 'Login' }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

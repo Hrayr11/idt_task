@@ -1,0 +1,251 @@
+.main_page_container {
+  margin: 30px 50px;
+
+  .breadcrumb_container {
+    font-weight: 700;
+    font-size: 12px;
+  }
+
+  .header_text {
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .input-group {
+    justify-content: flex-end;
+
+    .search_input {
+      position: relative;
+
+      .icon-search {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        color: rgba(0, 0, 0, 0.3);
+        transform: translateY(-50%);
+      }
+
+      input {
+        padding: 3px;
+        padding-left: 30px;
+        border: 1px solid #fff;
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 11px;
+        color: rgba(0, 0, 0, 0.3);
+        outline: none;
+        width: 260px;
+
+        &::placeholder {
+          font-size: 14px;
+          color: rgba(0, 0, 0, 0.3);
+        }
+
+      }
+    }
+  }
+
+
+  /** Bank account **/
+  .bank_account_container {
+    margin-top: 10px;
+    border: 1px solid rgba(255, 71, 51, 1);
+    padding: 17px 20px;
+    border-radius: 15px;
+
+    .account_container {
+      display: flex;
+      align-items: center;
+
+      .img_container {
+        img {
+          width: 88px;
+        }
+      }
+
+      div {
+        flex: 1;
+      }
+
+      &:not(:last-child) {
+        padding-bottom: 17px;
+        border-bottom: 1px solid rgba(255, 71, 51, 1);
+      }
+
+      &:not(:first-child) {
+        padding-top: 17px;
+      }
+
+      .img_container {
+        margin-right: 30px;
+
+        img {
+          border-radius: 10px;
+        }
+      }
+
+      .account_type {
+        margin-right: 30px;
+      }
+
+      .acc_body {
+        font-size: 14px;
+        font-weight: 700;
+        color: rgba(77, 77, 77, 1);
+      }
+
+      .acc_header {
+        font-size: 12px;
+        color: rgba(77, 77, 77, 0.5);
+      }
+
+      .currency {
+        margin: 0 30px;
+      }
+
+      .eye_icon {
+        margin-left: 8px;
+        cursor: pointer;
+
+        &::before {
+          width: 22px;
+          display: flex;
+          align-items: center;
+          height: 22px;
+          border: 1px solid rgba(77, 77, 77, 0.7);
+          justify-content: center;
+          background-color: #fff;
+          border-radius: 50%;
+          color: rgba(77, 77, 77, 0.9);
+        }
+      }
+
+      .adjust {
+        display: inline-block;
+        width: 90px;
+      }
+    }
+  }
+
+  .additional_info_container {
+    margin-top: 24px;
+    border: 1px solid rgba(77, 77, 77, 0.5);
+    border-radius: 15px;
+
+    .additional_info_header {
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      color: #fff;
+      text-transform: uppercase;
+      padding: 14px 30px;
+      font-size: 14px;
+      font-weight: 700;
+      background-color: rgba(77, 77, 77, 0.5);
+      box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .additional_info_content {
+      padding: 20px;
+      font-size: 14px;
+      color: rgba(77, 77, 77, 1);
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .main_page_container {
+
+    .bank_account_container {
+
+      .account_container {
+
+        .img_container {
+          margin-right: 20px;
+
+          img {
+            width: 80px;
+          }
+        }
+
+        .adjust {
+          width: 75px;
+        }
+
+        .account_type {
+          margin-right: 20px;
+        }
+
+        .acc_body {
+          font-size: 12px;
+        }
+
+        .currency {
+          margin: 0 20px;
+        }
+
+        .eye_icon {
+          margin-left: 6px;
+
+          &::before {
+            font-size: 12px;
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        .balance_adjust, .adjust {
+          letter-spacing: 2px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main_page_container {
+
+    .bank_account_container {
+
+      .account_container {
+        flex-direction: column;
+
+        > div {
+          display: flex;
+          align-items: center;
+          white-space: nowrap;
+
+          > div {
+            &:not(:last-child) {
+              margin-right: 10px;
+            }
+          }
+
+          &:not(:last-child) {
+            margin-bottom: 10px;
+            margin-right: 0;
+          }
+        }
+
+        .img_container {
+          img {
+            width: 120px;
+          }
+        }
+
+        .acc_body {
+          font-size: 12px;
+        }
+
+        .eye_icon {
+          margin-left: 6px;
+
+          &::before {
+            font-size: 12px;
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
